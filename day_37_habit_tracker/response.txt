@@ -1,0 +1,5 @@
+{"message":"Success. Let's visit https://pixe.la/@ruthersmith , it is your profile page!","isSuccess":true}
+{"message":"Success.","isSuccess":true}
+response for adding pixel to graph {"message":"Request body is empty.","isSuccess":false}
+response for adding pixel to graph {"message":"BadRequest. Please check Type of your request params. For example, Quantity is string, not number.","isSuccess":false}
+response for adding pixel to graph {"message":"Success.","isSuccess":true}

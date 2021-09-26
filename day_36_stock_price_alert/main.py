@@ -86,8 +86,8 @@ def get_news(from_date, to_date):
     send_sms_alert()
 
 
-## STEP 3: Use https://www.twilio.com
-# Send a seperate message with the percentage change and a article's title
+# STEP 3: Use https://www.twilio.com
+# Send a separate message with the percentage change and a article's title
 def send_sms_alert():
     global message
     client = Client(twilio_account_sid, twilio_auth_token)
@@ -97,7 +97,7 @@ def send_sms_alert():
         from_='+18722393155',
         to='7743601056'
     )
-    print(message)
+    message = ""
 
 
 # Optional: Format the SMS message like this:
