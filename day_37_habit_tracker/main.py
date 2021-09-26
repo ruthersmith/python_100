@@ -1,5 +1,6 @@
 import requests
 import os
+from datetime import datetime
 
 
 class HabitTracker:
@@ -8,6 +9,7 @@ class HabitTracker:
     """
 
     pixela_endpoint = "https://pixe.la/v1/users"
+
     try:
         file = open('secret.txt')
         TOKEN = file.readline().strip()
@@ -51,14 +53,15 @@ class HabitTracker:
         response = requests.post(url=endpoint, json=graph_config, headers=self.headers)
         self.log_response(f"response for graph creation {response.text}")
 
-    def add_pixel_to_graph(self, graph_id):
-        params = {
-            "date": "20210925",
-            "quantity": "10"
-        }
+    def modify_pixel(self, http_method, graph_id, p_date, p_quantity=0):
         endpoint = f"{HabitTracker.pixela_endpoint}/{HabitTracker.USERNAME}/graphs/{graph_id}"
-        response = requests.post(url=endpoint,json=params, headers=self.headers)
-        self.log_response(f"response for adding pixel to graph {response.text}\n")
+        graph_data = {"quantity": f"{p_quantity}"}
+        if http_method.__name__ == 'put' or http_method.__name__ == 'delete':
+            endpoint += f'/{p_date}'
+        elif http_method.__name__ == 'post':
+            graph_data["date"] = p_date
+        response = http_method(url=endpoint, json=graph_data, headers=self.headers)
+        self.log_response(f"response for modifying pixel using {http_method.__name__} method: {response.text}\n")
 
     def log_response(self, response):
         self.log_file.write(response)
@@ -67,5 +70,9 @@ class HabitTracker:
 
 if __name__ == '__main__':
     tracker = HabitTracker()
-   # tracker.add_pixel_to_graph("graph1")
+    tracker.modify_pixel(http_method=requests.post,
+                         graph_id="graph1",
+                         p_date=datetime.now().strftime('%Y%m%d'),
+                         p_quantity=10
+                         )
     tracker.log_file.close()
