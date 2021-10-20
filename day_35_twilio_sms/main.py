@@ -8,6 +8,10 @@ try:
     file = open('secret.txt')
     account_sid = file.readline()
     auth_token = file.readline()
+    twilio_num = file.readline().strip()
+    text_num = file.readline().strip()
+    file.close()
+    
 except :
     print("Missing account_sid or auth_token because error with secret.txt file")
 else:
@@ -16,7 +20,7 @@ else:
     message = client.messages \
                     .create(
                          body="You are getting this message from Ruthersmith's program",
-                         from_='+18722393155',
-                         to='7743601056'
+                         from_=f'+1{twilio_num}',
+                         to=f'{text_num}'
                      )
     print(message)

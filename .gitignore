@@ -1,6 +1,9 @@
 .idea/
 __pycache__/
+logs/
 high_level.txt
 ReadyToSend/
-day_32_send_email/secret.txt
+secret.json
 secret.txt
+day_44_personal_site/
+.cache
