@@ -4,6 +4,25 @@ Created on Wed Apr 21 19:20:37 2021
 
 @author: bercy
 Caesar cipher
+
+Bring you an all time favorite,
+This is my python implementation of a caesar cipher
+
+In cryptography, a Caesar cipher, also known as Caesar's cipher, the shift cipher, Caesar's code or Caesar shift,
+is one of the simplest and most widely known encryption techniques. 
+It is a type of substitution cipher in which each letter in the plaintext 
+is replaced by a letter some fixed number of positions down the alphabet. 
+For example, with a left shift of 3, D would be replaced by A, E would become B, and so on.
+The method is named after Julius Caesar, who used it in his private correspondence.
+
+When running the program,
+it prompts the user for 3 user inputs to be typed in the console:
+1) The task the user wants to perform either encrypt or decrypt
+2) The plain text message
+3) By how many letters should this message be shifted by
+
+
+More Info on the caesar cipher :https://en.wikipedia.org/wiki/Caesar_cipher
 """
 
 logo = """           

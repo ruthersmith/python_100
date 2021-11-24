@@ -6,6 +6,7 @@ from datetime import datetime
 class HabitTracker:
     """
         Makes a habit tracker using the pixela API
+        support for creating user, creating graph, and modifying the graph
     """
 
     pixela_endpoint = "https://pixe.la/v1/users"

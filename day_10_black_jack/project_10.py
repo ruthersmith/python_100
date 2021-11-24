@@ -4,6 +4,9 @@ Created on Sun Apr 25 20:14:15 2021
 
 @author: bercy
 BlackJack
+This is my implementation of a console blackjack application 
+based on my understanding of the rule
+I think that it's pretty fun to play
 """
 import random
 

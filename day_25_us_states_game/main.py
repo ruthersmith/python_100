@@ -1,3 +1,11 @@
+"""
+    Educational Gui Quiz game testing your knowledge of the us state.
+    The program run by displaying a map of the us and prompting the user to start entering the name of states
+    Every time the user enter the name of an actual state, it writes the name of the state on the map at the correct
+    location that it gets from the accompanying 50_states.csv
+    The program ends either when the users typed in all 50 states or exist the screen at which point all the states
+    that were not guessed by the user would be printed to the console
+"""
 import turtle
 import pandas
 import time

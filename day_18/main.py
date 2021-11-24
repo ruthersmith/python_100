@@ -3,6 +3,9 @@
 Created on Tue Jun 29 21:13:09 2021
 
 @author: bercy
+
+Using the turtle Module to draw this really cool circle
+
 """
 
 from turtle import Turtle, Screen

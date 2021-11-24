@@ -1,3 +1,11 @@
+"""
+    Turtle racing program using the turtle module,
+    at the start of the program,
+    the user is asked which the color of the winner turtle. (red,orange,yellow,green,blue,purple)
+    Then the race start, once a turtle reach the end of the screen and the user closes the racing screen
+    The declared winner is printed in the console and the user is informed wether they won or lost
+"""
+
 from turtle import Turtle, Screen
 import random
 
@@ -46,7 +54,7 @@ class TurtleRace:
                     return turtle.pencolor()
 
     def run(self):
-        user_bet = self.screen.textinput(title="Make your bet", prompt="Which color turtle will win")
+        user_bet = self.screen.textinput(title="Make your bet", prompt="Which color turtle will win (red,orange,yellow,green,blue,purple)")
         self.init_turtle()
 
         if user_bet:

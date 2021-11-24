@@ -6,6 +6,11 @@ Created on Wed Apr 21 10:35:37 2021
 
  -> rock paper scissor game   
  -> project 4
+
+This is a very simple console program that seeked 
+to replicate the rock paper scissor game
+
+ 
 """
 
 #used by the random number generator in project 4, rock paper scissor

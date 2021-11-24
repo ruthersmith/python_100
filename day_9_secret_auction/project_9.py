@@ -4,6 +4,9 @@ Created on Sat Apr 24 21:51:30 2021
 
 @author: bercy
 secret auction
+
+This is a small console application to stimulate a secret auction
+
 """
 logo = '''
                          ___________

@@ -1,3 +1,12 @@
+"""
+    Workout tracker, 
+    uses nutritionix nlp to get the excercise stats
+    then uses the sheety api to post the endpoint to google sheets
+    A nutritionix app id and api key, as well as a sheety endpoint is needed for it to run
+    the program looks for it in a secret.txt file in the same working directory, otherwise it will crash,
+    you can also modify the script directly
+"""
+
 import requests
 import datetime
 

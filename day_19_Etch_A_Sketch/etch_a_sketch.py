@@ -1,3 +1,16 @@
+"""
+    Interactive program that stimulate the Etch A Sketch toy
+    which was a mechanical drawing toy invented by André Cassagnes of France, read more at: https://en.wikipedia.org/wiki/Etch_A_Sketch
+    
+    This is a fully interactive program where the user can
+    -> use the arrow keys to move the drawing pen arround the screen
+    -> use the 'c' key to clear the screen
+    -> use the 'u' and 'd' keys representing 'pen up' and 'pen down' respectively to determine wether movement arround the screen
+       will draw (when in pen down mode) or will just move the pens location (when in pen down mode)
+       starting position is pen down
+     
+"""
+
 from turtle import Turtle, Screen
 
 

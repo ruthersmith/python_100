@@ -3,6 +3,12 @@
 Created on Wed Apr 21 12:19:44 2021
 
 @author: bercy
+
+This project contains 2 small project one being the game fizz buzz
+The other one being a random password generator
+The Program prompts the user to  input the number of letters, symbol and numbers
+that they would like their password to contain and a password is generated for them
+
 """
  #Password Generator Project
 import random
@@ -46,8 +52,10 @@ def password_generator():
         pass_index = random.randint(0,len(password) - 1)
         symbol_index = random.randint(0,len(symbols) - 1)
         password[pass_index] = symbols[symbol_index]
-        
-    print("".join(password))
+      
+    new_password = "".join(password)
+    print(new_password)
+    return new_password
 
 password_generator()
     

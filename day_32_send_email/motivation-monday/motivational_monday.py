@@ -1,9 +1,12 @@
+"""
+    The Goal of this program s
+"""
 import datetime as dt
 import random
 import smtplib
 
 # the day of the week to send motivational, 0==mon 1 ==tues 2 ==wed ...
-day_of_week = 0
+day_of_week = 5
 send_email_today = dt.datetime.now().weekday() == day_of_week
 
 
@@ -20,7 +23,7 @@ def get_random_quote():
 
 def read_secret_email_info():
     try:
-        file = open('secret.txt', 'r')
+        file = open('../secret.txt', 'r')
     except:
         print('Error reading file')
     else:
@@ -48,3 +51,4 @@ if __name__ == '__main__':
     if send_email_today:
         print('Sending email')
         send_motivational_email()
+

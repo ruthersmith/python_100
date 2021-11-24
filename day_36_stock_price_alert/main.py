@@ -1,3 +1,16 @@
+"""
+    This program  monitors the price of a particular stock, in this case tesla
+    if the price between 2 consecutive days decreases by more than 5 percent,
+    the program searches the news and sends a text alert
+   
+   ** Note because I have a trial account with the news api, I can only get news less than a month old
+    so I modified the script accordingly just to test however if you have a paid accout, you can set prod_env to true, 
+    to get the news returned from the correct date [not tested] **
+    
+    In order to run this program, without modifying it, you can have a secret.txt file in the same directory with the 
+    twilio account_sid and auth_token, news_api_key, alphavantage_api_key each in a separate line in the listed order.
+"""
+
 import json
 
 import requests
@@ -33,7 +46,7 @@ def get_stock_data():
     return response.json()
 
 
-# When STOCK price increase/decreases by 5% between yesterday
+# When STOCK price decreases by 5% or more between yesterday
 # and the day before yesterday then print("News ...").
 # and calls tries to get news
 def did_decrease(json_data, percent=-5):

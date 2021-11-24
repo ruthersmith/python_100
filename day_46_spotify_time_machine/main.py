@@ -50,7 +50,12 @@ class SpotifyTimeMachine:
         for example, in the Spotify Desktop client’s search box to locate an artist, album, or track
         """
         uri_search_result = spotify.search(q=song[0], type='track')
-        return uri_search_result["tracks"]["items"][0]["uri"]
+        try:
+            uri = uri_search_result["tracks"]["items"][0]["uri"]
+        except:
+            print(song)
+            uri = "spotify:track:4INDiWSKvqSKDEu7mh8HFz"
+        return uri
 
     def make_spotify_playlist(self, songs, date):
         """

@@ -3,7 +3,7 @@ from turtle import Turtle
 
 class Snake:
     """
-        reponsible for the snake
+        responsible for the snake
     """
     UP = 90
     DOWN = 270

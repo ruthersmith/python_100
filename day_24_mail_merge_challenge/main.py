@@ -1,5 +1,13 @@
 class MailMerge:
-    """Program to create personalised letter"""
+    """
+        Simple Mail Merge Program to create personalised letter
+        lets you create a batch of documents that are personalized for each recipient
+        using two files
+            1) The template file
+            2) The file containing the names of each recipient in the format 1 name per line
+        The program replaces the substring '[name]' with the name of the intended recipient
+        In this case I hard coded the paths to the intended file because it suited my purpose
+    """
 
     def __init__(self, letter_path, names_path):
         with open(letter_path) as letter_file:

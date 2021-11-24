@@ -1,14 +1,15 @@
+"""
+    Flash card gui application
+"""
 import pandas
 import tkinter as tk
 import random
 
 
 class FlashCard:
-
     BACKGROUND_COLOR = "#B1DDC6"
     # after this amount of millisecond show translation
     SHOW_TRANSLATION_AFTER = 3000
-
 
     def __init__(self):
         self.window = tk.Tk()

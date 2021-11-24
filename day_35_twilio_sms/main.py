@@ -1,3 +1,9 @@
+"""
+    simple program to work with the twilio api to send a text message
+    This works with an accompanying secret.txt file that contains the creditials
+    or you could edit the script directly
+"""
+
 from twilio.rest import Client
 
 

@@ -1,3 +1,8 @@
+"""
+    Gui program that displays on the screen a random kanye quote fetched from the kanye rest api.
+    every time the main button is clicked a new quote is displayed
+"""
+
 from tkinter import *
 import requests
 
