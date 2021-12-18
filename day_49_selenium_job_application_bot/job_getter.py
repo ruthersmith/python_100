@@ -118,7 +118,7 @@ class JobGetter:
 
     def sign_in(self):
         """
-        This method is used to get to the sign in page, provide the credential and attemp to login
+        This method is used to get to the sign in page, provide the credential and attempt to login
         :return:
         """
         sign_in_btn = self.driver.find_element(By.CLASS_NAME, 'cta-modal__primary-btn')
