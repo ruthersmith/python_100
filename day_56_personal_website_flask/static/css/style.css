@@ -1,0 +1,34 @@
+/*color palate used : https://colorhunt.co/palette/d1e8e4c37b89bccc9aeae7c6*/
+/*embedded fonts from https://fonts.google.com/ */
+body {
+	margin: 0px;
+	text-align: center;	
+	font-family: 'Merriweather', serif;
+}
+
+.section-intro {
+	background-color: #D1E8E4;
+	height: 100vh;
+	padding-top: 20px;
+
+}
+
+.section-intro h1 {
+	margin: 0px;
+	font-family: 'Sacramento', cursive;
+	font-size: 40px;
+}
+
+h2, h3 {
+	font-family: 'Montserrat', sans-serif;
+}
+
+.bottom-cloud {
+	position: absolute;
+	left: 300px;
+}
+
+.top-cloud {
+	position: relative;
+	left: 250px;
+}
