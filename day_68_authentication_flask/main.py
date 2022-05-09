@@ -8,7 +8,6 @@ app = Flask(__name__)
 login_manager = LoginManager()
 login_manager.init_app(app)
 
-
 app.config['SECRET_KEY'] = 'any-secret-key-you-choose'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -20,7 +19,6 @@ def load_user(user_id):
     return User.query.get(int(user_id))
 
 ##CREATE TABLE IN DB
-
 class User(UserMixin,db.Model):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(100), unique=True)
@@ -38,6 +36,10 @@ def home():
 @app.route('/register', methods=["GET", "POST"])
 def register():
     if request.method == "POST":
+        if getUserByEmail(request.form.get('email')):
+            flash("User already exist")
+            return redirect(url_for("login"))
+
         password = generate_password_hash(request.form.get('password'))
         new_user = User(
             email=request.form.get('email'),
@@ -52,6 +54,9 @@ def register():
         return render_template("register.html")
 
 
+def getUserByEmail(email):
+    return User.query.filter_by(email=email).first()
+
 
 @app.route('/login', methods=["GET", "POST"])
 def login():
@@ -62,13 +67,13 @@ def login():
         user = User.query.filter_by(email=email).first()
 
         if not user:
-            return f"user with email {email} not found"
-
-        if check_password_hash(user.password, password):
-            login_user(user)
-            return redirect(url_for("secrets", name=user.name))
+            flash(f"user with email {email} not found ")
         else:
-            return f"Incorrect Password entered"
+            if check_password_hash(user.password, password):
+                login_user(user)
+                return redirect(url_for("secrets", name=user.name))
+            else:
+                flash("Incorrect Password entered")
 
     return render_template("login.html")
 
@@ -81,7 +86,8 @@ def secrets(name):
 
 @app.route('/logout')
 def logout():
-    pass
+    logout_user()
+    return redirect(url_for('login'))
 
 
 @app.route('/download')
